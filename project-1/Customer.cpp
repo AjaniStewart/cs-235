@@ -1,3 +1,13 @@
+/*
+* Filename: GeniusBar.cpp
+* Author: Ajani Stewart
+* Date: 8/29/2018
+* CSCI 235 Project 1
+*This adds the implemtations of the Customer functions.
+*/
+
+
+
 #include <string>
 #include "Customer.hpp"
 using namespace std;
