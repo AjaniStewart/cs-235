@@ -34,4 +34,4 @@ public:
     @return  A vector containing all the entries in the set. */
    virtual std::vector<ItemType> toVector() const = 0;
 }; // end SetfInterface
-#endif /* SET_INTERFACE_H_ */
+#endif /* SET_INTERFACE_H_ */   

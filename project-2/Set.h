@@ -4,7 +4,7 @@
 template <class ItemType>
 class Set : public SetInterface<ItemType> {
 private:
-    static const int DEFAULT_SET_SIZE = 8; // for testing purposes we will keep the set small
+    static const int DEFAULT_SET_SIZE = 4; // for testing purposes we will keep the set small
     ItemType items_[DEFAULT_SET_SIZE]; // array of set items
     int item_count_;                  // current count of set items
     int max_items_;                   // max capacity of the set

@@ -36,12 +36,19 @@ bool Set<ItemType>::add(const ItemType& item) {
 
 template<class ItemType>
 bool Set<ItemType>::remove(const ItemType& item) {
-    if (this->contains(item)) {
-        int itemIndex = this->getIndexOf(item);
-        for (int i = itemIndex; i < item_count_; i++) {
-            items_[i] = items_[i+1];
-        }
-        item_count_--;
+    int itemIndex = this->getIndexOf(item);
+    //if I needed to retain order
+    // if (itemIndex != -1) {
+    //     for (int i = itemIndex; i < item_count_-1; i++) {
+    //         items_[i] = items_[i+1];
+    //     }
+    //     item_count_--;
+    //     return true;
+    // } else {
+    //     return false;
+    // }
+    if (itemIndex != -1 && item_count_ > 0) {
+        items_[itemIndex] = items_[--item_count_];
         return true;
     } else {
         return false;
@@ -58,11 +65,7 @@ void Set<ItemType>::clear() {
 
 template<class ItemType>
 bool Set<ItemType>::contains(const ItemType& item) const {
-    for (int i = 0; i < item_count_; i++) {
-        if (items_[i] == item)
-            return true;
-    }
-    return false;
+    return this->getIndexOf(item) == -1 ? false : true;
 }
 
 template<class ItemType>

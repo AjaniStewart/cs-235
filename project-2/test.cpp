@@ -3,6 +3,7 @@
 
 int main() {
     Set<int> intSet;
+    std::cout << std::boolalpha;
     std::cout << intSet.getCurrentSize() << '\n';
     std::cout << intSet.isEmpty()<< '\n';
     std::cout << intSet.add(1)<< '\n';
