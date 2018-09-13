@@ -57,15 +57,12 @@ bool Set<ItemType>::remove(const ItemType& item) {
 
 template<class ItemType>
 void Set<ItemType>::clear() {
-    for (auto& e : items_) {
-        this->remove(e);
-    }
     item_count_ = 0;
 }
 
 template<class ItemType>
 bool Set<ItemType>::contains(const ItemType& item) const {
-    return this->getIndexOf(item) == -1 ? false : true;
+    return this->getIndexOf(item) != -1;
 }
 
 template<class ItemType>
