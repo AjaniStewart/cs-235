@@ -13,13 +13,29 @@ private:
     int getIndexOf(const ItemType& target) const;
     
 public:
+    //Default Constructor
     Set();
+    //Returns the current size of the Set
+    //@return: current size of set
     virtual int getCurrentSize() const;
+    //@return: true if the set is empty, false otherwise
     virtual bool isEmpty() const;
+    //adds newEntry at the end of the set
+    //@param: item to be added
+    //@return: true if the item was added successfully, false otherwise
     virtual bool add(const ItemType& newEntry);
+    //removes an item in the set, if it exists
+    //@param: item to be removed
+    //@return: true if the item was removed successfully, false otherwise
     virtual bool remove(const ItemType& anEntry);
+    //removes everything in the set
     virtual void clear();
+    //checks if an item is in the set
+    //@param: the entry to be checked
+    //@return: true if the item is in the set, false otherwise
     virtual bool contains(const ItemType& anEntry) const;
+    //converts a set to a vector
+    //@return: a vector contain all the elements of the set
     virtual std::vector<ItemType> toVector() const;
 };
 #include "Set.cpp"
