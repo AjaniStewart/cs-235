@@ -30,6 +30,6 @@ public:
   Node<Song>* getPointerTo(const Song& target, Node<Song>*& previous_ptr) const;
   void loop();
   void unloop();
-  void displayPlaylist();
+  void displayPlayList();
 
 };

@@ -161,7 +161,6 @@ bool LinkedSet<ItemType>::contains(const ItemType& anEntry) const
 }  // end contains
 
 
-
 // private
 // Returns either a pointer to the node containing a given entry 
 // or the null pointer if the entry is not in the set.
