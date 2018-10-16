@@ -14,8 +14,12 @@
 //@return: a pointer to the last node(song) in the playlist if the playlist is
 //not empty, returns a nullptr otherwise
 Node<Song>* PlayList::getPointerToLastNode() const {
-  return tail_ptr_;
-};
+  Node<Song>* cur_ptr = head_ptr_;
+  while (cur_ptr->getNext() != nullptr) {
+    cur_ptr = cur_ptr->getNext();
+  }
+  return cur_ptr;
+}
 
 //default constructor
 PlayList::PlayList() {
@@ -31,33 +35,13 @@ PlayList::PlayList(const Song& song) {
 }
 
 //copy constructor
-PlayList::PlayList(const PlayList& playlist) {
-  item_count_ = playlist.item_count_;
-  if (playlist.isEmpty()) {
-    head_ptr_ = nullptr;
-    tail_ptr_ = nullptr;
-  } else {
-    Node<Song>* first_node = new Node<Song>;
-    first_node->setItem(playlist.head_ptr_->getItem());
-    head_ptr_ = first_node;
-    Node<Song>* org_playlist_ptr = head_ptr_;
-    Node<Song>* cur_ptr = playlist.head_ptr_->getNext();
-    while (cur_ptr != nullptr) {
-      Node<Song>* new_node = new Node<Song>;
-      new_node->setItem(cur_ptr->getItem());
-      org_playlist_ptr->setNext(new_node);
-      if (new_node->getNext() == nullptr) {
-        tail_ptr_ = new_node;
-      }
-      cur_ptr = cur_ptr->getNext();
-      org_playlist_ptr = org_playlist_ptr->getNext();
-    }
-  }
+PlayList::PlayList(const PlayList& playlist) : LinkedSet<Song>(playlist) {
+  tail_ptr_ = getPointerToLastNode();
 }
 
 //destructor
 PlayList::~PlayList() {
-  //unloop();
+  unloop();
   clear();
 }
 //adds a song to the end of a playlist
