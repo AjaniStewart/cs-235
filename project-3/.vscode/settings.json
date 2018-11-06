@@ -1,0 +1,5 @@
+{
+  "python.linting.enabled": false,
+  "C_Cpp.intelliSenseEngineFallback": "Disabled",
+  "python.pythonPath": "/usr/local/bin/python3"
+}
