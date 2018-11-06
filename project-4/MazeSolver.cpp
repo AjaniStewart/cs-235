@@ -9,7 +9,6 @@ This is the implementation of MazeSolver.h
 
 #include <fstream>
 #include <iostream>
-#include <vector>
 #include <string>
 
 #include "MazeSolver.h"
