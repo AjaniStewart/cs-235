@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++14
 test: tests.o SortingTests.o
 	g++ $(CXXFLAGS) -o test tests.o SortingTests.o
 
-tests.o: tests.cpp SortingTests.h
+tests.o: tests.cpp SortingTests.hpp
 	g++ $(CXXFLAGS) -c tests.cpp
 
 SortingTests.o: SortingTests.cpp
