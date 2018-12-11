@@ -137,11 +137,15 @@ bool MazeSolver::isExtensible(Position current_position, direction dir) {
   bool extensible = false;
   if (dir == SOUTH) {
           // if its on the edge
-    if ((current_position.row < (maze_rows_ - 1) ) && ((maze_[current_position.row + 1][current_position.column] == '_') || (maze_[current_position.row + 1][current_position.column] == '$'))) {
+    if ((current_position.row < (maze_rows_ - 1) ) && \
+        ((maze_[current_position.row + 1][current_position.column] == '_') || \
+        (maze_[current_position.row + 1][current_position.column] == '$'))) {
           extensible = true;
         }
   } else {
-      if (current_position.column < (maze_columns_ - 1) && (((maze_[current_position.row][current_position.column + 1] == '_') || maze_[current_position.row][current_position.column + 1] == '$'))) {
+      if (current_position.column < (maze_columns_ - 1) && \
+        (((maze_[current_position.row][current_position.column + 1] == '_') || \
+        maze_[current_position.row][current_position.column + 1] == '$'))) {
           extensible = true;
         }
     }
